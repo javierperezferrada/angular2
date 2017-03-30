@@ -52,6 +52,7 @@
     "zone.js": "0.7.7"
   },
   "devDependencies": {
+    "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "2.4.9",
     "@types/electron": "1.4.32",
     "@types/fullcalendar": "2.7.37",
