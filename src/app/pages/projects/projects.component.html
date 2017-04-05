@@ -1,12 +1,60 @@
 <strong>Página para proyectos</strong>
-
+<!-- Html para la vista Mis Proyectos -->
 <p>En esta sección del Sitio Web usted encontrará todo lo relacionado con sus Proyectos</p>
-<p>{{ myObject.age }}</p>
 
-<ul>
-	<li *ngFor="let arr of myArr">{{ arr}}</li>
-</ul>
 
-<ul>
-	<li *ngFor="let array of myProjects">{{ array.name }}</li>
-</ul>
+<div class="row">
+  <div *ngFor="let project of projects" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" [class.selected]="project === selectedProject" (click)="onSelect(project)">
+	  <ba-card >
+	    <div>
+	      <div class="description">
+	        <div>{{project.name}}</div>
+	      </div>
+	    </div>
+	  </ba-card>
+  </div>
+
+
+</div>
+
+
+<div class="card-body">
+	<div *ngIf="selectedProject">
+      <h2>Detalles del Proyecto <strong>{{selectedProject.name}}</strong></h2>
+      <div><label>id: </label>{{selectedProject.id}}</div>
+      <div>
+        <label>nombre: </label>
+        <input [(ngModel)]="selectedProject.name" placeholder="nombre"/>
+      </div>
+    </div>
+</div>
+
+<!-- Extraido desde tutorial Angular2 -->
+<div class="content">
+	<h1>{{title}}</h1>
+    <h2>{{hero.name}} details!</h2>
+    <div><label>id: </label>{{hero.id}}</div>
+    <div>
+      <label>name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name">
+    </div>
+</div>
+<div class="content">
+	<h1>{{title}}</h1>
+    <h2>My Heroes</h2>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </li>
+    </ul>
+    <div *ngIf="selectedHero">
+      <h2>{{selectedHero.name}} details!</h2>
+      <div><label>id: </label>{{selectedHero.id}}</div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+      </div>
+    </div>
+</div>

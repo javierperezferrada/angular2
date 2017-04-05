@@ -7,7 +7,7 @@ export const PAGES_MENU = [
         data: { // custom menu declaration
           menu: {
             title: 'Reporte de Gastos', // menu title
-            icon: 'ion-android-home', // menu icon
+            icon: 'ion-calculator', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
@@ -20,7 +20,7 @@ export const PAGES_MENU = [
         data: { // custom menu declaration
           menu: {
             title: 'Proyectos', // menu title
-            icon: 'ion-android-home', // menu icon
+            icon: 'ion-aperture', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
