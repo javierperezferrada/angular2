@@ -3,6 +3,19 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {
+        path: 'expense-report',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Reporte de Gastos', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
         path: 'projects',  // path for our page
         data: { // custom menu declaration
           menu: {
