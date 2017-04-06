@@ -3,24 +3,26 @@
 
 <div class="row">
   <div *ngFor="let project of projects" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" [class.selected]="project === selectedProject" (click)="onSelect(project)">
-	  <ba-card >
-	    <div>
-	      <div class="description">
-	        <div>{{project.name}}</div>
-	      </div>
-	    </div>
-	  </ba-card>
+    <ba-card >
+      <div>
+        <div class="description">
+          <div>{{project.name}}</div>
+        </div>
+      </div>
+    </ba-card>
   </div>
 </div>
 
-
+<project-detail [project]="selectedProject"></project-detail>
+<!--
 <div class="card-body">
-	<div *ngIf="selectedProject">
-      <h2>Detalles del Proyecto <strong>{{selectedProject.name}}</strong></h2>
-      <div><label>id: </label>{{selectedProject.id}}</div>
-      <div>
-        <p>{{ selectedProject.name }}</p>
-      </div>
-    </div>
+<div *ngIf="selectedProject">
+<h2>Detalles del Proyecto <strong>{{selectedProject.name}}</strong></h2>
+<div><label>id: </label>{{selectedProject.id}}</div>
+<div>
+<p>{{ selectedProject.name }}</p>
 </div>
+</div>
+</div>
+-->
 

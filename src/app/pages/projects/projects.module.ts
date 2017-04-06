@@ -3,7 +3,8 @@ import { CommonModule }  from '@angular/common';
 import { ProjectsComponent } from './projects.component';
 import { routing } from './projects.routing';
 import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
-import { NgaModule } from '../../theme/nga.module';//para estilo
+import { NgaModule } from '../../theme/nga.module'; // para estilo
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 
 
@@ -12,10 +13,11 @@ import { NgaModule } from '../../theme/nga.module';//para estilo
     CommonModule,
     routing,
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
-    NgaModule //para estilo
+    NgaModule // para estilo
   ],
   declarations: [
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectDetailComponent
   ],
   bootstrap: [ ProjectsComponent ]
 })
