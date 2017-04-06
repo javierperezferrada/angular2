@@ -1,11 +1,9 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
-import { ProjectsComponent } from './projects.component';
+import { ProjectListComponent } from './project-list.component';
 import { routing } from './projects.routing';
 import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
 import { NgaModule } from '../../theme/nga.module'; // para estilo
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { ProjectListComponent } from './project-list/project-list.component';
 
 
 
@@ -18,10 +16,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
     NgaModule // para estilo
   ],
   declarations: [
-    ProjectsComponent,
-    ProjectDetailComponent,
     ProjectListComponent
   ],
-  bootstrap: [ ProjectsComponent ]
+  bootstrap: [ ProjectListComponent ]
 })
 export class ProjectsModule {}

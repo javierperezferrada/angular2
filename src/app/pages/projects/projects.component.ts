@@ -7,21 +7,4 @@ import { ProjectsService } from './projects.service';
   templateUrl: './projects.component.html',
   providers: [ProjectsService]
 })
-export class ProjectsComponent implements OnInit {
-  projects: Project[];
-  selectedProject: Project;
-
-  constructor(private projectsService: ProjectsService) { }
-
-  getProjects(): void {
-    this.projectsService.getProjects().then(projects => this.projects = projects);
-  }
-
-  ngOnInit(): void {
-    this.getProjects();
-  }
-
-  onSelect(project: Project): void {
-    this.selectedProject = project;
-  }
-}
+export class ProjectsComponent { }
