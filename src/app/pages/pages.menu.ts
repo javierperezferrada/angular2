@@ -26,7 +26,17 @@ export const PAGES_MENU = [
             expanded: false,
             order: 0
           }
-        }
+        },
+        children: [
+          {
+            path: 'list',
+            data: {
+              menu: {
+                title: 'Mis Proyectos',
+              }
+            }
+          }
+        ]
       },
       {
         path: 'new',  // path for our page
