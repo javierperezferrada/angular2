@@ -1,6 +1,6 @@
 import { Project } from './project';
 
-export const PROJECTS: Project[] = [
+export let PROJECTS: Project[] = [
   {id: 11, name: 'Mr. Nice'},
   {id: 12, name: 'Narco'},
   {id: 13, name: 'Bombasto'},
