@@ -3,6 +3,9 @@ import { Project } from '../project';
 import { ProjectsService } from '../projects.service';
 import { routing } from '../projects.routing';
 
+import 'style-loader!./project-list.scss';
+import 'style-loader!../../../theme/components/baContentTop/baContentTop.scss';
+
 @Component({
   selector: 'project-list',
   templateUrl: './project-list.component.html',

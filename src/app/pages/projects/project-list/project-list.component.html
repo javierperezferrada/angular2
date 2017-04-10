@@ -1,17 +1,38 @@
 <!-- Html para la vista Mis Proyectos -->
+<div class="content-top clearfix">
+  <h1 class="al-title">PROYECTOS</h1>
 
+  <ul class="breadcrumb al-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/pages/dashboard">Inicio</a></li>
+    <li class="breadcrumb-item active">Mis Proyectos</li>
+  </ul>
+</div>
 <div class="row">
-  <div *ngFor="let project of projects" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" [class.selected]="project === selectedProject" (click)="onSelect(project)">
+  <div *ngFor="let project of projects" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 project" >
+    <a [routerLink]="['../detail',project.id]">
     <ba-card >
-      <div>
-        <div class="description">
-          <div>{{project.name}}</div>
-          <a [routerLink]="['../detail',project.id]">ir</a>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          Nombre Proyecto:
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          {{project.name}}
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          Descripción:
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          {{project.description}}
         </div>
       </div>
     </ba-card>
+    </a>
   </div>
 </div>
+
 
 <!--
 <div class="card-body">

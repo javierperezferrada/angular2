@@ -32,7 +32,7 @@ export const PAGES_MENU = [
             path: 'list',
             data: {
               menu: {
-                title: 'Mis Proyectos',
+                title: 'Mis Proyectos'
               }
             }
           }
@@ -62,7 +62,7 @@ export const PAGES_MENU = [
             order: 0
           }
         }
-      }/**,
+      },
       {
         path: 'editors',
         data: {
@@ -373,7 +373,7 @@ export const PAGES_MENU = [
             target: '_blank'
           }
         }
-      }*/
+      }
     ]
   }
 ];

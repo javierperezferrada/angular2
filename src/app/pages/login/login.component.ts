@@ -31,7 +31,7 @@ export class Login {
       // your code goes here
       if(values.email=='user@mail.com'){
         console.log('correct email');
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['pages/dashboard']);
       }
       // console.log(values);
     }

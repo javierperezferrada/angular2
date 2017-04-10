@@ -1,8 +1,19 @@
+
+<div class="content-top clearfix">
+  <h1 class="al-title">DETALLE</h1>
+
+  <ul class="breadcrumb al-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/pages/dashboard">Inicio</a></li>
+    <li class="breadcrumb-item"><a routerLink="/pages/projects/list">Mis Proyectos</a></li>
+    <li class="breadcrumb-item active">Detalle</li>
+  </ul>
+</div>
+
 <div *ngIf="project">
-  <h2>{{project.name}} details!</h2>
   <div><label>id: </label>{{project.id}}</div>
   <div>
-    <label>name: </label>
-    <input [(ngModel)]="project.name" placeholder="name"/>
+    <label>Nombre: {{ project.name }}</label><br>
+    <label>Descripción: {{ project.description }}</label>
+    
   </div>
 </div>
