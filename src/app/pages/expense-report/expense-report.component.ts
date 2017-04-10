@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { Hero } from './hero';
+
+import 'style-loader!../../theme/components/baContentTop/baContentTop.scss';
 
 @Component({
   selector: 'expense-report',
-  template: `
-    <p>hola mndo </p>	
-  `
+  templateUrl: './expense-report.component.html'
 })
 
 export class ExpenseReportComponent {
