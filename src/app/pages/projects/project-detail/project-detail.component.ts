@@ -5,7 +5,6 @@ import { Router, ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import { ProjectsService } from '../projects.service';
 import { Project } from '../project';
-import { Title }     from '@angular/platform-browser';
 
 import 'style-loader!../../../theme/components/baContentTop/baContentTop.scss';
 
@@ -19,11 +18,8 @@ export class ProjectDetailComponent implements OnInit {
   constructor(
     private projectsService: ProjectsService,
     private route: ActivatedRoute,
-    private location: Location,
-    private titleService: Title
-  ) {
-        this.titleService.setTitle( "newTitle" );
-    }
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
     this.route.params

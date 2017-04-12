@@ -1,8 +1,35 @@
 <div class="content-top clearfix">
   <h1 class="al-title">REPORTE DE GASTOS</h1>
-
   <ul class="breadcrumb al-breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/pages/dashboard">Inicio</a></li>
     <li class="breadcrumb-item active">Reporte de Gastos </li>
   </ul>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div>
+      <ba-card title="Formulario de reporte" baCardClass="with-scroll">
+        <form [formGroup]="expensiveForm" (ngSubmit)="onSubmit(expensiveForm.value)" novalidate>
+          <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+            <label class="center-block">Nombre:
+              <input class="form-control" formControlName="name">
+            </label>
+          </div>
+          <div class="form-group row" [ngClass]="{'has-error': (!description.valid && description.touched), 'has-success': (description.valid && description.touched)}">
+            <label class="center-block">Descripción:
+              <input class="form-control" formControlName="description">
+            </label>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+              <button [disabled]="!expensiveForm.valid" type="submit" class="btn btn-default btn-success">Guardar</button>
+            </div>
+          </div>
+        </form>
+        
+        <p>Form value: {{ expensiveForm.value | json }}</p>
+        <p>Form status: {{ expensiveForm.status | json }}</p>
+      </ba-card>
+    </div>
+  </div>
 </div>
