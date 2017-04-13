@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
+import { AuthService } from "../shared/services/auth.service";
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -30,6 +32,19 @@ export type StoreType = {
   disposeOldHosts: () => void
 };
 
+export interface AppConfig {
+  BASE_URL: string,
+  APP_ID: string,
+  APP_SECRET: string
+}
+
+export const APPCONFIG:AppConfig = {
+  BASE_URL: 'https://incuba-api.selfbits.io',
+  APP_ID: 'c86b8fc98aa60919b72aaafbfa364481',
+  APP_SECRET: '4153c01b0d0b48f5fd514563a9697d27',
+};
+
+
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -50,7 +65,9 @@ export type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    AuthService,
+    {provide:'APP_CONFIG_TOKEN', useValue:APPCONFIG}
   ]
 })
 
