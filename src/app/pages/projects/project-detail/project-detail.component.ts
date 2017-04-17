@@ -22,10 +22,19 @@ export class ProjectDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.route.params
-    //  .switchMap((params: Params) => this.projectsService.getProject(+params['id']))
-    //  .subscribe(project => this.project = project);
-    console.log("debug");
+    this.route.params
+      .switchMap((params: Params) => this.projectsService.getProject(params['id']))
+      //.subscribe(project => this.project = project);
+      .subscribe(res => {
+        console.log(res);
+        if(res.status === 200){
+          var project = JSON.parse(res._body);
+          console.log(project);
+          this.project = project;
+          //console.log(JSON.parse(localStorage.getItem("currentUser")));
+        }
+      });
+    //console.log("debug");
   }
 
 }

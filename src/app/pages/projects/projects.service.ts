@@ -17,19 +17,17 @@ export class ProjectsService {
 
 getProjects():Observable<Response>{
   var Authorization = "Bearer "+JSON.parse(localStorage.getItem("currentUser")).token;
-  console.log(Authorization);
-  console.log(this.config.APP_ID);
   return this.http.get(
   `${this.config.BASE_URL}/api/v1/db/m/projects`,
 {headers:new Headers({'Content-Type':'application/json','sb-app-id':this.config.APP_ID,'Authorization':Authorization,'sb-app-secret':this.config.APP_SECRET})
 });
 }
 
-login(formData:auth):Observable<Response>{
-return this.http.post(
-`${this.config.BASE_URL}/api/v1/auth/login`,
-JSON.stringify(formData),
-{headers:new Headers({'Content-Type':'application/json','sb-app-id':this.config.APP_ID,'sb-app-secret':this.config.APP_SECRET})})
-}
-
+getProject(id: string):Observable<Response>{
+console.log("id %s",id);
+var Authorization = "Bearer "+JSON.parse(localStorage.getItem("currentUser")).token;
+return this.http.get(
+`${this.config.BASE_URL}/api/v1/db/m/projects/`+id,
+{headers:new Headers({'Content-Type':'application/json','sb-app-id':this.config.APP_ID,'Authorization':Authorization,'sb-app-secret':this.config.APP_SECRET})
+});
 }
