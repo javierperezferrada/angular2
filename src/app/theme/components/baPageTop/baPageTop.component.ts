@@ -24,6 +24,10 @@ export class BaPageTop {
     this._state.notifyDataChanged('menu.isCollapsed', this.isMenuCollapsed);
     return false;
   }
+  
+  public signout(){
+    localStorage.removeItem("currentUser")
+  }
 
   public scrolledChanged(isScrolled) {
     this.isScrolled = isScrolled;

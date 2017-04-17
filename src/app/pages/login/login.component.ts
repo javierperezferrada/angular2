@@ -37,13 +37,18 @@ export class Login {
       this.auth.login({email:values.email, password:values.password}).subscribe(res => {
         console.log(res);
         if(res.status === 200){
+          //here save the token in LocalStorage
+          console.log("user: %s",values.email);
+          console.log("token: %s",res._body);
+          localStorage.setItem("currentUser", JSON.stringify({ token: JSON.parse(res._body).token, name: JSON.parse(res._body).userId }));
           this.router.navigate(['pages']);
+          //console.log(JSON.parse(localStorage.getItem("currentUser")));
         }
       }, err => {
         //do something with error
         this.error = true;
         this.errorMessage = err.json().message;
-      }))
+      });
+    }
     }
   }
-}

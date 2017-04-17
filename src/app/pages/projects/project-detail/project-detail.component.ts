@@ -22,9 +22,10 @@ export class ProjectDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params
-      .switchMap((params: Params) => this.projectsService.getProject(+params['id']))
-      .subscribe(project => this.project = project);
+    //this.route.params
+    //  .switchMap((params: Params) => this.projectsService.getProject(+params['id']))
+    //  .subscribe(project => this.project = project);
+    console.log("debug");
   }
 
 }
